@@ -1,4 +1,4 @@
-package com.smartgrocery.model;
+package model;
 
 /**
  * Represents an Administrator.

@@ -1,6 +1,6 @@
-package com.smartgrocery.service;
+package service;
 
-import com.smartgrocery.model.AdminUser;
+import model.AdminUser;
 
 import java.util.List;
 

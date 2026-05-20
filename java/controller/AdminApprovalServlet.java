@@ -1,9 +1,9 @@
-package com.smartgrocery.servlet;
+package controller;
 
-import com.smartgrocery.dao.PendingAdminDao;
-import com.smartgrocery.model.PendingAdmin;
-import com.smartgrocery.model.User;
-import com.smartgrocery.service.AuthService;
+import dao.PendingAdminDao;
+import model.PendingAdmin;
+import model.User;
+import service.AuthService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -40,7 +40,7 @@ public class AdminApprovalServlet extends HttpServlet {
 
         // Only SUPER_ADMIN can approve admins
         if (!"ADMIN".equals(user.getRole()) ||
-                !"SUPER_ADMIN".equals(((com.smartgrocery.model.AdminUser) user).getAdminCode())) {
+                !"SUPER_ADMIN".equals(((model.AdminUser) user).getAdminCode())) {
             response.sendRedirect("dashboard.jsp?error=AccessDenied");
             return;
         }

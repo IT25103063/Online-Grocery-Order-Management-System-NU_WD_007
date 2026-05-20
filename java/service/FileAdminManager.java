@@ -1,9 +1,9 @@
-package com.smartgrocery.service;
+package service;
 
-import com.smartgrocery.dao.UserDao;
-import com.smartgrocery.model.AdminUser;
-import com.smartgrocery.model.User;
-import com.smartgrocery.util.Constants;
+import dao.UserDao;
+import model.AdminUser;
+import model.User;
+import util.Constants;
 
 import java.io.*;
 import java.text.SimpleDateFormat;

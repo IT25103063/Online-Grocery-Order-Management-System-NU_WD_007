@@ -1,4 +1,4 @@
-package com.smartgrocery.model;
+package model;
 
 public class PendingAdmin {
     private String id;

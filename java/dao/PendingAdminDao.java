@@ -1,7 +1,7 @@
-package com.smartgrocery.dao;
+package dao;
 
-import com.smartgrocery.model.PendingAdmin;
-import com.smartgrocery.util.Constants;
+import model.PendingAdmin;
+import util.Constants;
 
 import java.io.*;
 import java.util.ArrayList;

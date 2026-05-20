@@ -1,9 +1,9 @@
-package com.smartgrocery.servlet;
+package controller;
 
-import com.smartgrocery.model.AdminUser;
-import com.smartgrocery.model.User;
-import com.smartgrocery.service.AdminManager;
-import com.smartgrocery.service.FileAdminManager;
+import model.AdminUser;
+import model.User;
+import service.AdminManager;
+import service.FileAdminManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
