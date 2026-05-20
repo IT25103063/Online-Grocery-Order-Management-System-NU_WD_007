@@ -1,9 +1,5 @@
 package com.smartgrocery.model;
 
-/**
- * Represents a regular customer.
- * Demonstrates Inheritance (extends User).
- */
 public class CustomerUser extends User {
 
     private String membershipLevel;
