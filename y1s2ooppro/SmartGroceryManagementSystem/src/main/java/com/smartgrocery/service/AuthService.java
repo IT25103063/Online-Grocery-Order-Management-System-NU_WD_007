@@ -35,7 +35,7 @@ public class AuthService {
             return "Username is already taken.";
         }
 
-        // If registering as ADMIN, put in pending approval
+        
         if ("ADMIN".equalsIgnoreCase(role)) {
             // Check if already pending
             for (PendingAdmin pending : pendingAdminDao.findByStatus("PENDING")) {
@@ -53,7 +53,7 @@ public class AuthService {
                 return "Failed to save admin request.";
             }
         }
-        // Register as CUSTOMER - instant access
+        
         else {
             User newUser = new CustomerUser(null, username, password, email, "Standard");
             boolean saved = userDao.save(newUser);
