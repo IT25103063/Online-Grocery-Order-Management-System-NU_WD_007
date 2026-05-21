@@ -19,9 +19,7 @@ public class UserService {
         return userDao.findAll();
     }
 
-    /**
-     * Searches users by keyword (matches username, email, or role).
-     */
+    
     public List<User> searchUsers(String keyword) {
         List<User> allUsers = getAllUsers();
         if (keyword == null || keyword.trim().isEmpty()) {
@@ -45,9 +43,7 @@ public class UserService {
         return userDao.findById(id);
     }
 
-    /**
-     * Validates and updates an existing user.
-     */
+    
     public String updateUser(String id, String username, String email, String password, String specificField) {
         if (username == null || username.trim().isEmpty()) return "Username is required.";
         if (email == null || email.trim().isEmpty()) return "Email is required.";
