@@ -1,9 +1,6 @@
 package com.smartgrocery.model;
 
-/**
- * Abstract base class for all users in the system.
- * Demonstrates Abstraction and Encapsulation.
- */
+
 public abstract class User {
     private String id;
     private String username;
@@ -21,7 +18,7 @@ public abstract class User {
         this.role = role;
     }
 
-    // Abstract method to demonstrate Polymorphism
+    
     public abstract String getDisplayRole();
 
     // Getters and Setters (Encapsulation)
