@@ -1,9 +1,6 @@
 package com.smartgrocery.model;
 
-/**
- * Represents an Administrator.
- * Demonstrates Inheritance (extends User).
- */
+
 public class AdminUser extends User {
 
     private String adminCode;
