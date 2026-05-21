@@ -12,9 +12,7 @@ import java.util.UUID;
 
 public class UserDao {
 
-    /**
-     * Retrieves all users (both Admins and Customers) from their respective files.
-     */
+    
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
         users.addAll(readFromFile(Constants.ADMINS_FILE, "ADMIN"));
@@ -22,9 +20,7 @@ public class UserDao {
         return users;
     }
 
-    /**
-     * Helper method to read a list of users from a specific file.
-     */
+    
     private List<User> readFromFile(String filePath, String role) {
         List<User> users = new ArrayList<>();
         File file = new File(filePath);
@@ -48,9 +44,7 @@ public class UserDao {
         return users;
     }
 
-    /**
-     * Finds a user by ID by scanning both files.
-     */
+    
     public User findById(String id) {
         List<User> allUsers = findAll();
         for (User user : allUsers) {
@@ -61,9 +55,7 @@ public class UserDao {
         return null;
     }
 
-    /**
-     * Finds a user by username by scanning both files.
-     */
+    
     public User findByUsername(String username) {
         List<User> allUsers = findAll();
         for (User user : allUsers) {
@@ -74,9 +66,7 @@ public class UserDao {
         return null;
     }
 
-    /**
-     * Saves a new user to the appropriate file based on their specific type.
-     */
+    
     public boolean save(User user) {
         String filePath = (user instanceof AdminUser) ? Constants.ADMINS_FILE : Constants.USERS_FILE;
         
@@ -94,9 +84,7 @@ public class UserDao {
         }
     }
 
-    /**
-     * Updates an existing user. It reads all users of that type, modifies the target, and rewrites the file.
-     */
+    
     public boolean update(User user) {
         String filePath = (user instanceof AdminUser) ? Constants.ADMINS_FILE : Constants.USERS_FILE;
         List<User> users = readFromFile(filePath, user.getRole());
@@ -116,9 +104,7 @@ public class UserDao {
         return false;
     }
 
-    /**
-     * Deletes a user by ID. It locates the user to determine the role, reads that file, removes the user, and rewrites.
-     */
+    
     public boolean delete(String id) {
         User target = findById(id);
         if (target == null) return false;
@@ -134,9 +120,7 @@ public class UserDao {
         return false;
     }
 
-    /**
-     * Helper method to rewrite an entire file with a list of users.
-     */
+    
     private boolean rewriteFile(String filePath, List<User> users) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, false))) { // false = overwrite
             for (User u : users) {
@@ -150,9 +134,7 @@ public class UserDao {
         }
     }
 
-    /**
-     * Helper method to format a User object to a pipe-delimited string.
-     */
+    
     private String formatUserLine(User user) {
         if (user instanceof AdminUser) {
             AdminUser admin = (AdminUser) user;
